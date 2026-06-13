@@ -14,12 +14,12 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<HBox prefHeight="700.0" prefWidth="1050.0" styleClass="root" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quantalabs.jamusync.controller.InventoryController">
+<HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="root, screen-root" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quantalabs.jamusync.controller.InventoryController">
     <stylesheets>
         <URL value="@../css/style.css" />
     </stylesheets>
 
-    <VBox prefWidth="550.0" spacing="20.0" HBox.hgrow="ALWAYS">
+    <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="20.0" HBox.hgrow="ALWAYS">
         <padding>
             <Insets bottom="30.0" left="30.0" right="20.0" top="30.0" />
         </padding>
@@ -36,7 +36,7 @@
                     <Button mnemonicParsing="false" onAction="#handleBack" styleClass="button-outline" text="Back to Dashboard" />
                 </children>
             </HBox>
-            <TableView fx:id="movementTable" VBox.vgrow="ALWAYS">
+            <TableView fx:id="movementTable" minHeight="200.0" VBox.vgrow="ALWAYS">
                 <columns>
                     <TableColumn fx:id="colDate" prefWidth="130.0" text="Date" />
                     <TableColumn fx:id="colProduct" prefWidth="150.0" text="Product" />

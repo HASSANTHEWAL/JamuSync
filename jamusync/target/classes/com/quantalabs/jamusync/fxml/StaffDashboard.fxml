@@ -12,13 +12,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox prefHeight="700.0" prefWidth="1050.0" styleClass="root" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quantalabs.jamusync.controller.StaffDashboardController">
+<HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="root, screen-root" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quantalabs.jamusync.controller.StaffDashboardController">
     <stylesheets>
         <URL value="@../css/style.css" />
     </stylesheets>
     
     <!-- Sidebar Left -->
-    <VBox minWidth="300.0" prefWidth="300.0" maxWidth="300.0" styleClass="sidebar">
+    <VBox maxHeight="1.7976931348623157E308" styleClass="sidebar" HBox.hgrow="NEVER">
         <children>
             <Label styleClass="sidebar-brand" text="JamuSync" />
             <VBox spacing="5.0" VBox.vgrow="ALWAYS">
@@ -34,7 +34,7 @@
     </VBox>
     
     <!-- Main Right Content Area -->
-    <VBox HBox.hgrow="ALWAYS">
+    <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
         <children>
             <!-- Top Bar -->
             <HBox alignment="CENTER_LEFT" styleClass="top-bar">
@@ -56,9 +56,9 @@
             </HBox>
             
             <!-- Dashboard Content Container (Scrollable) -->
-            <ScrollPane fitToWidth="true" styleClass="scroll-pane" VBox.vgrow="ALWAYS">
+            <ScrollPane fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="scroll-pane" VBox.vgrow="ALWAYS">
                 <content>
-                    <VBox spacing="25.0">
+                    <VBox maxWidth="1.7976931348623157E308" spacing="25.0">
                         <padding>
                             <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
                         </padding>
@@ -106,7 +106,7 @@
                             <VBox spacing="10.0" styleClass="card" VBox.vgrow="ALWAYS">
                                 <children>
                                     <Label styleClass="card-title" text="Your Recent Transactions" />
-                                    <TableView fx:id="transactionsTable" prefHeight="300.0" styleClass="table-view">
+                                    <TableView fx:id="transactionsTable" minHeight="240.0" styleClass="table-view" VBox.vgrow="ALWAYS">
                                         <columns>
                                             <TableColumn fx:id="colTxId" prefWidth="60.0" style="-fx-alignment: CENTER;" text="ID" />
                                             <TableColumn fx:id="colTxBuyer" prefWidth="150.0" text="Buyer" />

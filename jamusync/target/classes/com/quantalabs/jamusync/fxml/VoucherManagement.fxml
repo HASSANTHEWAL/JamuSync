@@ -14,12 +14,12 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<HBox prefHeight="700.0" prefWidth="1050.0" styleClass="root" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quantalabs.jamusync.controller.VoucherController">
+<HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="root, screen-root" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quantalabs.jamusync.controller.VoucherController">
     <stylesheets>
         <URL value="@../css/style.css" />
     </stylesheets>
 
-    <VBox prefWidth="550.0" spacing="20.0" HBox.hgrow="ALWAYS">
+    <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="20.0" HBox.hgrow="ALWAYS">
         <padding>
             <Insets bottom="30.0" left="30.0" right="20.0" top="30.0" />
         </padding>
@@ -36,7 +36,7 @@
                     <Button mnemonicParsing="false" onAction="#handleBack" styleClass="button-outline" text="Back to Dashboard" />
                 </children>
             </HBox>
-            <TableView fx:id="voucherTable" VBox.vgrow="ALWAYS">
+            <TableView fx:id="voucherTable" minHeight="200.0" VBox.vgrow="ALWAYS">
                 <columns>
                     <TableColumn fx:id="colCode" prefWidth="120.0" text="Code" />
                     <TableColumn fx:id="colType" prefWidth="90.0" style="-fx-alignment: CENTER;" text="Type" />

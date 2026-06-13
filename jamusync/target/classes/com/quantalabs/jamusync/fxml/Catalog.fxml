@@ -11,15 +11,16 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="700.0" prefWidth="1050.0" spacing="15.0" styleClass="root" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quantalabs.jamusync.controller.CatalogController">
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="15.0" styleClass="root, screen-root" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quantalabs.jamusync.controller.CatalogController">
     <stylesheets>
         <URL value="@../css/style.css" />
     </stylesheets>
     <padding>
-        <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
+        <Insets bottom="24.0" left="32.0" right="32.0" top="24.0" />
     </padding>
     <children>
         <HBox alignment="CENTER_LEFT" spacing="15.0">
@@ -31,48 +32,56 @@
                     </children>
                 </VBox>
                 <Region HBox.hgrow="ALWAYS" />
-                <TextField fx:id="searchField" prefWidth="220.0" promptText="Search products..." />
-                <ComboBox fx:id="filterCombo" prefWidth="160.0" promptText="Filter by benefit..." />
+                <TextField fx:id="searchField" maxWidth="280.0" minWidth="180.0" prefWidth="220.0" promptText="Search products..." />
+                <ComboBox fx:id="filterCombo" maxWidth="220.0" minWidth="140.0" prefWidth="160.0" promptText="Filter by benefit..." />
                 <Button mnemonicParsing="false" onAction="#handleBackToLogin" styleClass="button-outline" text="Back to Login" />
             </children>
         </HBox>
 
-        <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+        <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="20.0" VBox.vgrow="ALWAYS">
             <children>
-                <ScrollPane fitToWidth="true" prefWidth="620.0" styleClass="scroll-pane" HBox.hgrow="ALWAYS">
+                <ScrollPane fx:id="productScrollPane" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="scroll-pane" HBox.hgrow="ALWAYS">
                     <content>
                         <FlowPane fx:id="productGrid" hgap="15.0" vgap="15.0" />
                     </content>
                 </ScrollPane>
 
-                <VBox prefWidth="380.0" spacing="12.0" styleClass="card" HBox.hgrow="NEVER">
+                <VBox maxHeight="1.7976931348623157E308" maxWidth="440.0" minWidth="300.0" prefWidth="380.0" spacing="12.0" styleClass="card, catalog-detail-panel" HBox.hgrow="NEVER">
                     <children>
                         <Label styleClass="card-title" text="Product Details" />
-                        <HBox alignment="CENTER" prefHeight="120.0" styleClass="image-preview-box">
-                            <children>
-                                <ImageView fx:id="detailImageView" fitHeight="110.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true" />
-                            </children>
-                        </HBox>
-                        <Label fx:id="detailNameLabel" styleClass="detail-name" text="Select a product" wrapText="true" />
-                        <Label fx:id="detailPriceLabel" styleClass="detail-price" />
-                        <Label fx:id="detailDescriptionLabel" wrapText="true" />
-                        <Label styleClass="label-form" text="Ingredients" />
-                        <Label fx:id="detailIngredientsLabel" wrapText="true" />
-                        <Label styleClass="label-form" text="Health Benefits" />
-                        <Label fx:id="detailBenefitsLabel" wrapText="true" />
+                        <ScrollPane fitToWidth="true" maxHeight="1.7976931348623157E308" styleClass="scroll-pane" VBox.vgrow="ALWAYS">
+                            <content>
+                                <VBox spacing="10.0">
+                                    <children>
+                                        <HBox alignment="CENTER" minHeight="100.0" prefHeight="120.0" styleClass="image-preview-box">
+                                            <children>
+                                                <ImageView fx:id="detailImageView" fitHeight="110.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true" />
+                                            </children>
+                                        </HBox>
+                                        <Label fx:id="detailNameLabel" styleClass="detail-name" text="Select a product" wrapText="true" />
+                                        <Label fx:id="detailPriceLabel" styleClass="detail-price" wrapText="true" />
+                                        <Label fx:id="detailDescriptionLabel" wrapText="true" />
+                                        <Label styleClass="label-form" text="Ingredients" />
+                                        <Label fx:id="detailIngredientsLabel" wrapText="true" />
+                                        <Label styleClass="label-form" text="Health Benefits" />
+                                        <Label fx:id="detailBenefitsLabel" wrapText="true" />
 
-                        <Region VBox.vgrow="ALWAYS" />
+                                        <Region minHeight="12.0" prefHeight="12.0" />
 
-                        <Label styleClass="card-title" text="Jamu Assistant" />
-                        <TextArea fx:id="chatHistoryArea" editable="false" prefHeight="120.0" promptText="Ask about jamu health benefits..." wrapText="true" />
-                        <HBox spacing="8.0">
-                            <children>
-                                <TextField fx:id="chatInputField" promptText="Type your question..." HBox.hgrow="ALWAYS" />
-                                <Button mnemonicParsing="false" onAction="#handleSendChat" styleClass="button-secondary" text="Ask" />
-                            </children>
-                        </HBox>
-                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleGetRecommendations" text="Get Recommendations" />
-                        <Label fx:id="recommendationLabel" wrapText="true" />
+                                        <Label styleClass="card-title" text="Jamu Assistant" />
+                                        <TextArea fx:id="chatHistoryArea" editable="false" maxHeight="160.0" minHeight="100.0" prefHeight="120.0" promptText="Ask about jamu health benefits..." wrapText="true" />
+                                        <HBox spacing="8.0">
+                                            <children>
+                                                <TextField fx:id="chatInputField" promptText="Type your question..." HBox.hgrow="ALWAYS" />
+                                                <Button mnemonicParsing="false" onAction="#handleSendChat" styleClass="button-secondary" text="Ask" />
+                                            </children>
+                                        </HBox>
+                                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleGetRecommendations" text="Get Recommendations" />
+                                        <Label fx:id="recommendationLabel" wrapText="true" />
+                                    </children>
+                                </VBox>
+                            </content>
+                        </ScrollPane>
                     </children>
                 </VBox>
             </children>

@@ -12,12 +12,12 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<HBox prefHeight="700.0" prefWidth="1100.0" styleClass="root" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quantalabs.jamusync.controller.SalesController">
+<HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="root, screen-root" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quantalabs.jamusync.controller.SalesController">
     <stylesheets>
         <URL value="@../css/style.css" />
     </stylesheets>
 
-    <VBox prefWidth="650.0" spacing="15.0" HBox.hgrow="ALWAYS">
+    <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="15.0" HBox.hgrow="ALWAYS">
         <padding>
             <Insets bottom="25.0" left="25.0" right="15.0" top="25.0" />
         </padding>
@@ -60,7 +60,7 @@
                 </children>
             </HBox>
 
-            <TableView fx:id="cartTable" prefHeight="280.0" VBox.vgrow="ALWAYS">
+            <TableView fx:id="cartTable" minHeight="200.0" VBox.vgrow="ALWAYS">
                 <columns>
                     <TableColumn fx:id="colProduct" prefWidth="220.0" text="Product" />
                     <TableColumn fx:id="colUnitPrice" prefWidth="100.0" style="-fx-alignment: CENTER-RIGHT;" text="Unit Price" />

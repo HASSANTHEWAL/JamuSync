@@ -15,13 +15,13 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<HBox prefHeight="700.0" prefWidth="1050.0" styleClass="root" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quantalabs.jamusync.controller.ProductController">
+<HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="root, screen-root" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quantalabs.jamusync.controller.ProductController">
     <stylesheets>
         <URL value="@../css/style.css" />
     </stylesheets>
     
     <!-- Left Pane: Product Table & Title -->
-    <VBox prefWidth="550.0" spacing="20.0" HBox.hgrow="ALWAYS">
+    <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="20.0" HBox.hgrow="ALWAYS">
         <padding>
             <Insets bottom="30.0" left="30.0" right="20.0" top="30.0" />
         </padding>
@@ -39,7 +39,7 @@
                 </children>
             </HBox>
             
-            <TableView fx:id="productTable" VBox.vgrow="ALWAYS">
+            <TableView fx:id="productTable" minHeight="200.0" VBox.vgrow="ALWAYS">
                 <columns>
                     <TableColumn fx:id="colId" prefWidth="40.0" style="-fx-alignment: CENTER;" text="ID" />
                     <TableColumn fx:id="colName" prefWidth="180.0" text="Name" />
@@ -56,7 +56,7 @@
     </VBox>
     
     <!-- Right Pane: Product Form -->
-    <VBox prefWidth="450.0" styleClass="card" HBox.hgrow="NEVER">
+    <VBox maxHeight="1.7976931348623157E308" prefWidth="450.0" styleClass="card" HBox.hgrow="NEVER">
         <VBox.margin>
             <Insets />
         </VBox.margin>

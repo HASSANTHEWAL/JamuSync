@@ -12,12 +12,12 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<HBox prefHeight="700.0" prefWidth="1100.0" styleClass="root" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quantalabs.jamusync.controller.TransactionHistoryController">
+<HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="root, screen-root" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quantalabs.jamusync.controller.TransactionHistoryController">
     <stylesheets>
         <URL value="@../css/style.css" />
     </stylesheets>
 
-    <VBox spacing="15.0" HBox.hgrow="ALWAYS">
+    <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="15.0" HBox.hgrow="ALWAYS">
         <padding>
             <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
         </padding>
@@ -68,7 +68,7 @@
                 </children>
             </HBox>
 
-            <TableView fx:id="transactionTable" VBox.vgrow="ALWAYS">
+            <TableView fx:id="transactionTable" minHeight="240.0" VBox.vgrow="ALWAYS">
                 <columns>
                     <TableColumn fx:id="colId" prefWidth="50.0" style="-fx-alignment: CENTER;" text="ID" />
                     <TableColumn fx:id="colBuyer" prefWidth="130.0" text="Buyer" />
