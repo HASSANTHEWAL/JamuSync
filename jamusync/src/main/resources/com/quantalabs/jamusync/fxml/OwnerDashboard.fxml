@@ -20,7 +20,7 @@
     </stylesheets>
     
     <!-- Sidebar Left -->
-    <VBox prefWidth="240.0" styleClass="sidebar">
+    <VBox minWidth="300.0" prefWidth="300.0" maxWidth="300.0" styleClass="sidebar">
         <children>
             <Label styleClass="sidebar-brand" text="JamuSync" />
             <VBox spacing="5.0" VBox.vgrow="ALWAYS">
@@ -76,13 +76,13 @@
                                     <!-- Metric Card 1 -->
                                     <VBox prefWidth="250.0" styleClass="card" HBox.hgrow="ALWAYS">
                                         <children>
-                                            <Label text="Today's Revenue" textFill="#A69B8F" />
-                                            <Label fx:id="revenueLabel" text="Rp 0" textFill="#4A2C2A">
+                                            <Label styleClass="metric-label" text="Today's Revenue" />
+                                            <Label fx:id="revenueLabel" styleClass="metric-value" text="Rp 0">
                                                 <font>
                                                     <Font name="System Bold" size="24.0" />
                                                 </font>
                                             </Label>
-                                            <Label fx:id="salesCountLabel" text="0 completed sales" textFill="#C9A84C">
+                                            <Label fx:id="salesCountLabel" styleClass="metric-accent" text="0 completed sales">
                                                 <font>
                                                     <Font name="System Italic" size="12.0" />
                                                 </font>
@@ -93,13 +93,13 @@
                                     <!-- Metric Card 2 -->
                                     <VBox prefWidth="250.0" styleClass="card" HBox.hgrow="ALWAYS">
                                         <children>
-                                            <Label text="Low Stock Alerts" textFill="#A69B8F" />
-                                            <Label fx:id="lowStockAlertLabel" text="0 items" textFill="#D32F2F">
+                                            <Label styleClass="metric-label" text="Low Stock Alerts" />
+                                            <Label fx:id="lowStockAlertLabel" styleClass="metric-warning" text="0 items">
                                                 <font>
                                                     <Font name="System Bold" size="24.0" />
                                                 </font>
                                             </Label>
-                                            <Label text="Requires restocking soon" textFill="#A69B8F">
+                                            <Label styleClass="metric-label" text="Requires restocking soon">
                                                 <font>
                                                     <Font name="System Italic" size="12.0" />
                                                 </font>
@@ -110,13 +110,13 @@
                                     <!-- Metric Card 3 -->
                                     <VBox prefWidth="250.0" styleClass="card" HBox.hgrow="ALWAYS">
                                         <children>
-                                            <Label text="Pending Orders" textFill="#A69B8F" />
-                                            <Label fx:id="pendingOrdersLabel" text="0 orders" textFill="#6B8F71">
+                                            <Label styleClass="metric-label" text="Pending Orders" />
+                                            <Label fx:id="pendingOrdersLabel" styleClass="metric-positive" text="0 orders">
                                                 <font>
                                                     <Font name="System Bold" size="24.0" />
                                                 </font>
                                             </Label>
-                                            <Label text="Awaiting confirmation" textFill="#A69B8F">
+                                            <Label styleClass="metric-label" text="Awaiting confirmation">
                                                 <font>
                                                     <Font name="System Italic" size="12.0" />
                                                 </font>

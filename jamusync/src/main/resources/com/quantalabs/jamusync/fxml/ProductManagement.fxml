@@ -152,7 +152,7 @@
                                             <Button mnemonicParsing="false" onAction="#handleChooseImage" styleClass="button-secondary" text="Browse" />
                                         </children>
                                     </HBox>
-                                    <HBox alignment="CENTER" prefHeight="100.0" style="-fx-border-color: #E6DFD5; -fx-border-radius: 6px; -fx-background-color: #FFFFFF;">
+                                    <HBox alignment="CENTER" prefHeight="100.0" styleClass="image-preview-box">
                                         <children>
                                             <ImageView fx:id="imageView" fitHeight="90.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" />
                                         </children>
@@ -182,7 +182,7 @@
                             <Button fx:id="clearButton" mnemonicParsing="false" onAction="#handleClear" styleClass="button-outline" text="Clear" />
                         </children>
                     </HBox>
-                    <Button fx:id="deactivateButton" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleDeactivate" style="-fx-background-color: #D32F2F;" text="Deactivate" />
+                    <Button fx:id="deactivateButton" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleDeactivate" styleClass="button-danger" text="Deactivate" />
                 </children>
             </VBox>
         </children>
