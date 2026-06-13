@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox prefHeight="700.0" prefWidth="1050.0" styleClass="root" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quantalabs.jamusync.controller.ReportController">
+    <stylesheets>
+        <URL value="@../css/style.css" />
+    </stylesheets>
+
+    <VBox spacing="25.0" HBox.hgrow="ALWAYS">
+        <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+        </padding>
+        <children>
+            <HBox alignment="CENTER_LEFT">
+                <children>
+                    <VBox>
+                        <children>
+                            <Label styleClass="header-title" text="Financial Reports" />
+                            <Label styleClass="header-subtitle" text="REVENUE, EXPENSES, AND PROFIT ANALYSIS" />
+                        </children>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button mnemonicParsing="false" onAction="#handleBack" styleClass="button-outline" text="Back to Dashboard" />
+                </children>
+            </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="15.0">
+                <children>
+                    <VBox spacing="4.0">
+                        <children>
+                            <Label styleClass="label-form" text="From Date" />
+                            <DatePicker fx:id="startDatePicker" />
+                        </children>
+                    </VBox>
+                    <VBox spacing="4.0">
+                        <children>
+                            <Label styleClass="label-form" text="To Date" />
+                            <DatePicker fx:id="endDatePicker" />
+                        </children>
+                    </VBox>
+                    <Button mnemonicParsing="false" onAction="#handleGenerate" styleClass="button-secondary" text="Generate Report">
+                        <VBox.margin>
+                            <Insets top="20.0" />
+                        </VBox.margin>
+                    </Button>
+                </children>
+            </HBox>
+
+            <HBox spacing="20.0">
+                <children>
+                    <VBox prefWidth="300.0" spacing="8.0" styleClass="card" HBox.hgrow="ALWAYS">
+                        <children>
+                            <Label styleClass="metric-label" text="Total Revenue" />
+                            <Label fx:id="revenueLabel" styleClass="metric-value" text="Rp 0">
+                                <font>
+                                    <Font name="System Bold" size="24.0" />
+                                </font>
+                            </Label>
+                            <Label styleClass="metric-label" text="From completed sales">
+                                <font>
+                                    <Font name="System Italic" size="12.0" />
+                                </font>
+                            </Label>
+                        </children>
+                    </VBox>
+                    <VBox prefWidth="300.0" spacing="8.0" styleClass="card" HBox.hgrow="ALWAYS">
+                        <children>
+                            <Label styleClass="metric-label" text="Total Expenses (COGS)" />
+                            <Label fx:id="expensesLabel" styleClass="metric-warning" text="Rp 0">
+                                <font>
+                                    <Font name="System Bold" size="24.0" />
+                                </font>
+                            </Label>
+                            <Label styleClass="metric-label" text="Product cost of goods sold">
+                                <font>
+                                    <Font name="System Italic" size="12.0" />
+                                </font>
+                            </Label>
+                        </children>
+                    </VBox>
+                    <VBox prefWidth="300.0" spacing="8.0" styleClass="card" HBox.hgrow="ALWAYS">
+                        <children>
+                            <Label styleClass="metric-label" text="Net Profit / Loss" />
+                            <Label fx:id="profitLabel" styleClass="metric-positive" text="Rp 0">
+                                <font>
+                                    <Font name="System Bold" size="24.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="transactionCountLabel" styleClass="metric-label" text="0 transactions">
+                                <font>
+                                    <Font name="System Italic" size="12.0" />
+                                </font>
+                            </Label>
+                        </children>
+                    </VBox>
+                </children>
+            </HBox>
+
+            <Label fx:id="messageLabel" styleClass="label-success" wrapText="true" />
+        </children>
+    </VBox>
+</HBox>

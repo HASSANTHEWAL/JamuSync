@@ -88,12 +88,12 @@ public class StaffDashboardController {
 
     @FXML
     public void handleNavSales(ActionEvent event) {
-        showInfo("Sales POS", "This module will be built in Feature 8.");
+        JamuSyncApp.changeScene("/com/quantalabs/jamusync/fxml/Sales.fxml", "JamuSync - Sales POS");
     }
 
     @FXML
     public void handleNavInventory(ActionEvent event) {
-        showInfo("Inventory Tracking", "This module will be built in Feature 6 & 7.");
+        JamuSyncApp.changeScene("/com/quantalabs/jamusync/fxml/Inventory.fxml", "JamuSync - Inventory Management");
     }
 
     @FXML

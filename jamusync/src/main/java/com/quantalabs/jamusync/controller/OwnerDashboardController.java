@@ -120,37 +120,37 @@ public class OwnerDashboardController {
     // Navigations (Alerts for unbuilt items)
     @FXML
     public void handleNavProducts(ActionEvent event) {
-        showInfo("Product Management", "This module will be built in Feature 4.");
+        JamuSyncApp.changeScene("/com/quantalabs/jamusync/fxml/ProductManagement.fxml", "JamuSync - Product Management");
     }
 
     @FXML
     public void handleNavStaff(ActionEvent event) {
-        showInfo("Staff Management", "This module will be built in Feature 5.");
+        JamuSyncApp.changeScene("/com/quantalabs/jamusync/fxml/StaffManagement.fxml", "JamuSync - Staff Management");
     }
 
     @FXML
     public void handleNavInventory(ActionEvent event) {
-        showInfo("Inventory & Stock Tracking", "This module will be built in Feature 6 & 7.");
+        JamuSyncApp.changeScene("/com/quantalabs/jamusync/fxml/Inventory.fxml", "JamuSync - Inventory Management");
     }
 
     @FXML
     public void handleNavSales(ActionEvent event) {
-        showInfo("Sales POS", "This module will be built in Feature 8.");
+        JamuSyncApp.changeScene("/com/quantalabs/jamusync/fxml/Sales.fxml", "JamuSync - Sales POS");
     }
 
     @FXML
     public void handleNavTransactions(ActionEvent event) {
-        showInfo("Transaction History", "This module will be built in Feature 12.");
+        JamuSyncApp.changeScene("/com/quantalabs/jamusync/fxml/TransactionHistory.fxml", "JamuSync - Transaction History");
     }
 
     @FXML
     public void handleNavVouchers(ActionEvent event) {
-        showInfo("Voucher Management", "This module will be built in Feature 11.");
+        JamuSyncApp.changeScene("/com/quantalabs/jamusync/fxml/VoucherManagement.fxml", "JamuSync - Voucher Management");
     }
 
     @FXML
     public void handleNavReports(ActionEvent event) {
-        showInfo("Financial Report", "This module will be built in Feature 10.");
+        JamuSyncApp.changeScene("/com/quantalabs/jamusync/fxml/FinancialReport.fxml", "JamuSync - Financial Reports");
     }
 
     @FXML

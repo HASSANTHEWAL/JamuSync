@@ -196,6 +196,76 @@ public class ProductDAO {
         return false;
     }
 
+    /**
+     * Get a product by ID.
+     * @param id Product identifier.
+     * @return Product or null if not found.
+     */
+    public Product getProductById(int id) {
+        String sql = "SELECT * FROM products WHERE id = ?";
+        try (Connection conn = DatabaseManager.getInstance().getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setInt(1, id);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    return mapResultSetToProduct(rs);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * Update stock level for a product.
+     * @param productId Product identifier.
+     * @param newStock New stock quantity.
+     * @return True if update succeeded.
+     */
+    public boolean updateStock(int productId, int newStock) {
+        String sql = "UPDATE products SET stock = ? WHERE id = ?";
+        try (Connection conn = DatabaseManager.getInstance().getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setInt(1, newStock);
+            pstmt.setInt(2, productId);
+            return pstmt.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    /**
+     * Update stock within an existing database transaction.
+     */
+    public boolean updateStock(Connection conn, int productId, int newStock) throws SQLException {
+        String sql = "UPDATE products SET stock = ? WHERE id = ?";
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, newStock);
+            pstmt.setInt(2, productId);
+            return pstmt.executeUpdate() > 0;
+        }
+    }
+
+    /**
+     * Get product by ID within an existing connection (for transactional reads).
+     */
+    public Product getProductById(Connection conn, int id) throws SQLException {
+        String sql = "SELECT * FROM products WHERE id = ?";
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, id);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    return mapResultSetToProduct(rs);
+                }
+            }
+        }
+        return null;
+    }
+
     private Product mapResultSetToProduct(ResultSet rs) throws SQLException {
         return new Product(
             rs.getInt("id"),

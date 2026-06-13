@@ -18,7 +18,7 @@
     </stylesheets>
     
     <!-- Sidebar Left -->
-    <VBox prefWidth="240.0" styleClass="sidebar">
+    <VBox minWidth="300.0" prefWidth="300.0" maxWidth="300.0" styleClass="sidebar">
         <children>
             <Label styleClass="sidebar-brand" text="JamuSync" />
             <VBox spacing="5.0" VBox.vgrow="ALWAYS">
@@ -69,13 +69,13 @@
                                     <!-- Metric Card 1 -->
                                     <VBox prefWidth="350.0" styleClass="card" HBox.hgrow="ALWAYS">
                                         <children>
-                                            <Label text="Your Sales Revenue (Today)" textFill="#A69B8F" />
-                                            <Label fx:id="revenueLabel" text="Rp 0" textFill="#4A2C2A">
+                                            <Label styleClass="metric-label" text="Your Sales Revenue (Today)" />
+                                            <Label fx:id="revenueLabel" styleClass="metric-value" text="Rp 0">
                                                 <font>
                                                     <Font name="System Bold" size="24.0" />
                                                 </font>
                                             </Label>
-                                            <Label text="Completed orders recorded by you today" textFill="#A69B8F">
+                                            <Label styleClass="metric-label" text="Completed orders recorded by you today">
                                                 <font>
                                                     <Font name="System Italic" size="12.0" />
                                                 </font>
@@ -86,13 +86,13 @@
                                     <!-- Metric Card 2 -->
                                     <VBox prefWidth="350.0" styleClass="card" HBox.hgrow="ALWAYS">
                                         <children>
-                                            <Label text="Your Transactions Count (Today)" textFill="#A69B8F" />
-                                            <Label fx:id="salesCountLabel" text="0 orders" textFill="#6B8F71">
+                                            <Label styleClass="metric-label" text="Your Transactions Count (Today)" />
+                                            <Label fx:id="salesCountLabel" styleClass="metric-positive" text="0 orders">
                                                 <font>
                                                     <Font name="System Bold" size="24.0" />
                                                 </font>
                                             </Label>
-                                            <Label text="Transactions processed by you today" textFill="#A69B8F">
+                                            <Label styleClass="metric-label" text="Transactions processed by you today">
                                                 <font>
                                                     <Font name="System Italic" size="12.0" />
                                                 </font>
